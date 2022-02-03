@@ -48,22 +48,6 @@ const BasicSlides = () => {
 					<h1 className='title'>Slide number - {i}</h1>
 				</div>
 			</SwiperSlide>)}
-
-			{/* <SwiperSlide>
-				<img src="https://live.staticflickr.com/65535/49178874277_bd16c55a86_z.jpg" alt="slider item" />
-			</SwiperSlide>
-			<SwiperSlide>
-				<img src="https://live.staticflickr.com/65535/49178371963_593411c3b4_z.jpg" alt="slider item" />
-			</SwiperSlide>
-			<SwiperSlide>
-				<img src="https://live.staticflickr.com/65535/49179071212_c93862c2f6_z.jpg" alt="slider item" />
-			</SwiperSlide>
-			<SwiperSlide>
-				<img src="https://live.staticflickr.com/65535/49178949877_e033bbbf6a_z.jpg" alt="slider item" />
-			</SwiperSlide>
-			<SwiperSlide>
-				<img src="https://live.staticflickr.com/65535/49178950182_cc20887d00_z.jpg" alt="slider item" />
-			</SwiperSlide> */}
 		</Swiper>
 	</section>
 	);

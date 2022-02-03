@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
 
 
 /**
@@ -63,7 +60,7 @@ button {
 }
 
 section {
-	padding: 50px 0;
+	padding: clamp(25px, 20px + 3vw, 50px) 0;
 }
 
 section ~ section {
@@ -102,7 +99,7 @@ header + main {
 }
 
 .section-title {
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 	padding: 0 5px;
 	font-size: 30px;
   font-weight: 500;
@@ -126,9 +123,9 @@ header + main {
 	flex: 1 1 100%;
 }
 
-/**
-* header area
-*/
+/* -------------------------
+ * Header area
+------------------------- */
 .main-header {
 	position: fixed;
   top: 0;
@@ -216,14 +213,19 @@ header + main {
 	transform: translate3d(0, 0, -30px);
 }
 
-/**
-* footer area
-*/
+/* -------------------------
+ * Footer area
+------------------------- */
 .main-footer {
 	background: var(--clr-dark);
 	color: var(--clr-light);
 	padding: 20px;
 	text-align: center;
+	/* font-family: var(--font-special); */
+}
+
+.main-footer p a {
+	color: crimson;
 }
 
 .main-footer p a:hover {
@@ -265,7 +267,7 @@ header + main {
 }
 
 .hero-banner-area .title .char {
-	perspective: 1px;
+	perspective: 10px;
 	transition: all 0.2s ease-in-out;
 }
 
@@ -286,9 +288,9 @@ header + main {
 	opacity: 0.5;
 }
 
-/**
-* Swiper Slides page
-*/
+/* -------------------------
+ * Swiper Slides page
+------------------------- */
 .slider-section .swiper {
 	padding-bottom: 40px;
 }
@@ -319,6 +321,23 @@ header + main {
 	mix-blend-mode: multiply;
 	text-transform: uppercase;
 	font: 900 32px var(--font-body);
+}
+
+/* progress bar slide */
+.slider-section .progress-slide {
+	background: lavender;
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 30px 15px;
+}
+
+.progress-slide .single-slide {
+	height: 60vh;
+	text-align: center;
+}
+
+.slider-section .progress-slide .swiper-pagination-progressbar {
+	inset: auto 0 0 0;
 }
 
 
