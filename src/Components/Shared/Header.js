@@ -21,10 +21,10 @@ const Header = () => (
 						<NavLink to="/">Home</NavLink>
 					</li>
 					<li>
-						<NavLink to="swiper-slides">Swiper Slides</NavLink>
+						<NavLink to="/swiper-slides">Swiper Slides</NavLink>
 					</li>
 					<li>
-						<NavLink to="about">About</NavLink>
+						<NavLink to="/about">About</NavLink>
 					</li>
 					<li>
 						<NavLink to="*">404</NavLink>

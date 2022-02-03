@@ -1,4 +1,3 @@
-import React from 'react';
 import BasicSlides from '../Components/SwiperSlides/BasicSlides';
 import CoverflowSlides from '../Components/SwiperSlides/CoverflowSlides';
 

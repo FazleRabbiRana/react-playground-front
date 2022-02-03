@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
 
@@ -15,6 +15,9 @@
 	--clr-dark: #0f0c29;
 	--clr-white: #fff;
 	--clr-black: #000;
+	--font-body: 'Poppins', sans-serif;
+	--font-title: 'Source Sans Pro', sans-serif;
+	--font-special: 'Nunito', sans-serif;
 }
 
 *,
@@ -29,8 +32,13 @@ html,
 body {
 	width: 100%;
 	overflow-x: hidden;
-	font: 16px/1.6 'Poppins', sans-serif;
+	font: 300 16px/1.6 var(--font-body);
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-title);
+	line-height: 1.2;
 }
 
 img {
@@ -48,8 +56,9 @@ button {
 	cursor: pointer;
 	text-decoration: none;
 	border: 0;
-	color: inherit;
 	background-color: transparent;
+	color: inherit;
+	font-weight: 500;
 	transition: all 0.3s ease;
 }
 
@@ -62,7 +71,7 @@ section ~ section {
 }
 
 header + main {
-  margin-top: 58px;
+  margin-top: 56px;
 }
 
 /**
@@ -93,10 +102,11 @@ header + main {
 }
 
 .section-title {
-	margin-bottom: 20px;
-	text-align: center;
-	font-size: 26px;
+	margin-bottom: 30px;
+	padding: 0 5px;
+	font-size: 30px;
   font-weight: 500;
+	text-align: center;
 }
 
 .section-title span {
@@ -140,9 +150,10 @@ header + main {
 /* logo brand */
 .brand {
 	flex-shrink: 0;
-	font-size: 18px;
+	font-size: 20px;
 	color: var(--clr-white);
 	font-weight: 400;
+	font-family: var(--font-special);
 }
 
 .brand span {
@@ -227,30 +238,88 @@ header + main {
 */
 .hero-banner-area {
 	padding: 50px 0;
-	min-height: 83vh;
+	min-height: calc(100vh - 120px);
 	background-color: #141E30;
 	background: linear-gradient(to right, #24243e, #141E30, #0f0c29);
   color: var(--clr-light);
   font-size: 20px;
+	letter-spacing: 1px;
 	text-align: center;
 }
 
-.hero-banner-area h1 {
+.hero-banner-area .title {
 	text-transform: Uppercase;
-	font-size: clamp(32px, 28px + 3vw, 60px);
-	letter-spacing: 2px;
-	word-spacing: 20px;
+	font-family: var(--font-body);
+	font-size: clamp(32px, 30px + 3vw, 60px);
+	word-spacing: 10px;
+	letter-spacing: -1px;
 	color: #1c2a42;
 	text-shadow: -7px 3px 7px #061022;
-	margin-bottom: 15px;
+	margin-bottom: 50px;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.hero-banner-area .title span {
+	display: inline-block;
+}
+
+.hero-banner-area .title .char {
+	perspective: 1px;
+	transition: all 0.2s ease-in-out;
+}
+
+.hero-banner-area .title .char:hover {
+	transform: scale(1.5);
+}
+
+.hero-banner-area .subtitle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 300%;
+	letter-spacing: 1px;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	text-shadow: 0 0 12px #061022;
+	opacity: 0.5;
 }
 
 /**
 * Swiper Slides page
 */
-/* .basic-slide {
-	height: 80vh;
-} */
+.slider-section .swiper {
+	padding-bottom: 40px;
+}
+
+.slider-section .swiper-button-next:after, 
+.slider-section .swiper-button-prev:after {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 10px;
+	font-size: 20px;
+}
+
+/* basic slide */
+.basic-slide .single-slide {
+	min-height: 70vh;
+	padding: 0 5px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	text-align: center;
+}
+
+.basic-slide .title {
+	width: clamp(300px, 350px, 100%);
+	margin: 0 auto;
+	padding: 20px 0;
+	background: rgba(15, 12, 41, 0.85);
+	color: #fff;
+	mix-blend-mode: multiply;
+	text-transform: uppercase;
+	font: 900 32px var(--font-body);
+}
 
 
 /* -------------------------
@@ -265,6 +334,7 @@ header + main {
  * Responsive styles
 ------------------------- */
 @media (max-width: 767px) {
+	/* header navbar */
   .hamburger-icon {
     display: block;
   }
@@ -311,4 +381,13 @@ header + main {
     padding-left: 20px;
     transform: translate3d(0, 0, 0);
   }
+
+	/* hero banner */
+	.hero-banner-area .title .char {
+		letter-spacing: initial;
+	}
+
+	.hero-banner-area .subtitle {
+		font-size: 450%;
+	}
 }
